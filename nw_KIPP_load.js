@@ -1,7 +1,16 @@
 async function init() {
   try {
     const response = await fetch(
-      `https://us-central1-sales-chatbot-f1521.cloudfunctions.net/fetchKIPPLoadData`
+      `https://us-central1-sales-chatbot-f1521.cloudfunctions.net/fetchKIPPLoadData`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          hostname: window.location.hostname,
+        }),
+      }
     );
     let data = await response.json();
   
