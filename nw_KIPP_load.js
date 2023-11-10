@@ -1,11 +1,12 @@
 async function init() {
   try {
+    console.log('Fetching KIPP loader data...')
     const response = await fetch(
       `https://us-central1-sales-chatbot-f1521.cloudfunctions.net/fetchKIPPLoadData`,
       {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          // "Content-Type": "application/json",
         },
         body: JSON.stringify({
           hostname: window.location.hostname,
