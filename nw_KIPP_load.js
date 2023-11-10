@@ -6,7 +6,7 @@ async function init() {
       {
         method: "POST",
         headers: {
-          // "Content-Type": "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           hostname: window.location.hostname,
@@ -34,6 +34,15 @@ async function init() {
       });
     } else {
       // The DOM is already fully loaded
+      // Update the window object with the bot data
+      window.nwKIPPData = {
+        clientId: data.clientId,
+        shopProvider: data.shopProvider,
+        colours: data.colours,
+        faq: data.faq,
+        contactBtnUrl: data.contactBtnUrl,
+      }
+
       insertScript(scriptURL);
     }
     
