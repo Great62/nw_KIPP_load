@@ -22,11 +22,7 @@ async function init() {
       document.addEventListener("DOMContentLoaded", () => {
         // update the window object with the bot data
         window.nwKIPPData = {
-          clientId: data.clientId,
-          shopProvider: data.shopProvider,
-          colours: data.colours,
-          faq: data.faq,
-          contactBtnUrl: data.contactBtnUrl,
+          ...data
         }
 
         insertScript(scriptURL);
@@ -36,11 +32,7 @@ async function init() {
       // The DOM is already fully loaded
       // Update the window object with the bot data
       window.nwKIPPData = {
-        clientId: data.clientId,
-        shopProvider: data.shopProvider,
-        colours: data.colours,
-        faq: data.faq,
-        contactBtnUrl: data.contactBtnUrl,
+        ...data
       }
 
       insertScript(scriptURL);
